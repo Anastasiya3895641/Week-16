@@ -13,8 +13,15 @@ function sumInput() {
     for (i = 0; i <= items.length; i++) {
         items[i] = a[i].value;
 
+        document.querySelector('input').addEventListener('keydown', function (e) {
+            if (e.keyCode === 13) {
 
-        if (value === "/^[A-Za-z]+$/") {
+                console.log(this.value);
+            }
+        }
+
+
+            if (value === "/^[A-Za-z]+$/") {
             errorMessage.innerHTML =
                 `Вы вставили букву(-ы)<br>`;
             break;
