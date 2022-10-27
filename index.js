@@ -9,9 +9,10 @@ const result2 = document.querySelector('.result2');
 
 input.addEventListener('change', () => {
 
+    errormessage.innerHTML = ``;
+
     if (input.value !== '' && !/[^0-9\.]/g.test(input.value)) {
         items.push(Number(input.value));
-        console.log(items)
         input.value = '';
     }
     else {
@@ -24,9 +25,8 @@ input.addEventListener('change', () => {
 check.addEventListener('', () => { });
 
 for (let i = 0; i < items.length; i++) {
-    items = input.value;
+    sum = items[i];
 }
-
 
 
 function sumInput() {
@@ -43,16 +43,16 @@ function sumInput() {
     let sum = 0;
 
     for (let number of items) {
-        sum = sum + number;
+        sum += number;
     }
-    return sum;
 
+    console.log(sum);
+    result.innerHTML = `Получилось ${sum}`;
 }
 
 
 
-result.innerHTML = `Получилось ${sum}`;
-result2.innerHTML = `Размещены по возрастанию ${items.sort()}`;
+
 
 
 
