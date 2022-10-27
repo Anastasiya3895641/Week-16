@@ -1,43 +1,58 @@
 
-
 let items = [];
-let a = document.querySelector("input");
-let sum = 0;
-errorMessage.innerHTML = "";
-result.innerHTML = "";
-result2.innerHTML = "";
+const check = document.querySelector('.check');
+const errormessage = document.querySelector('.errormessage');
+const input = document.querySelector('.input');
+const result = document.querySelector('.result');
+const result2 = document.querySelector('.result2');
+
+
+input.addEventListener('change', () => {
+
+    if (input.value !== '' && !/[^0-9\.]/g.test(input.value)) {
+        items.push(Number(input.value));
+        console.log(items)
+        input.value = '';
+    }
+    else {
+        errormessage.innerHTML = `Введите цифры`;
+        input.value = '';
+    }
+});
+
+
+check.addEventListener('', () => { });
+
+for (let i = 0; i < items.length; i++) {
+    items = input.value;
+}
+
+
 
 function sumInput() {
 
+    let items = [];
 
-    for (i = 0; i <= items.length; i++) {
-        items[i] = a[i].value;
-
-        document.querySelector('input').addEventListener('keydown', function (e) {
-            if (e.keyCode === 13) {
-
-                console.log(this.value);
-            }
-        }
-
-
-            if (value === "/^[A-Za-z]+$/") {
-            errorMessage.innerHTML =
-                `Вы вставили букву(-ы)<br>`;
-            break;
-        }
-        items.push(+value);
+    while (true) {
+        if (number == '') break;
+        items.push(+number);
     }
 
+    items.sort();
 
-    for (let item of items) {
-        sum += item;
+    let sum = 0;
+
+    for (let number of items) {
+        sum = sum + number;
     }
     return sum;
+
 }
 
-document.querySelector('errorMassage').innerHTML = html;
-document.querySelector('result').innerHTML = html;
+
+
+result.innerHTML = `Получилось ${sum}`;
+result2.innerHTML = `Размещены по возрастанию ${items.sort()}`;
 
 
 
