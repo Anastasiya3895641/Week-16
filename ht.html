@@ -1,70 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sum input function</title>
 </head>
 
 <body>
-    <div id="resultsort"></div>
+   
+        <button type="submit" id="firstBtn">Введите числа</button>
+        <button type="submit"  id="secondBtn">Обработка введённых чисел</button>
+        <div class="main__sort" id="sortedNum"></div>
+        <div class="main__sum" id="sumNum"></div>
 
-    
 
-<script>
-function sumInput() {
-    let numbers = [];
-    let sortNumbers = [];
-    while (true) {
-        let value = prompt("Введите число");
-        if (value === "" || value === null || !isFinite(value)) break;
-        numbers.push(+value);
-    }
-    console.log(numbers);
-
-    function sortMass(a, b) {
-        if (a > b) {
-            return 1;
-        } else if (b > a) {
-            return -1;
-        } else {
-            return 0;
-        }
-    }
-
-    numbers.sort(sortMass);
-    for (let i = 0; i < numbers.length; i++) {
-        sortNumbers = sortNumbers + numbers[i] + ` `;
-    }
-    document.getElementById('resultsort').innerHTML = `Массив отсортирован по возрастанию:  ` + sortNumbers;
-    console.log(`Массив отсортирован:  ` + sortNumbers);
-
-    let sum = 0;
-    for (let number of numbers) {
-        sum += number;
-    }
-    return sum;
-}
-
-alert(`Сумма введенных чисел равна:  ` + sumInput());
-</script>
+    <script src="./ht.js"></script>
 </body>
 
 </html>
-
-function task46() {
-
-    let input = document.querySelector('#task46 input[name=country]');
-    let paragraph = document.querySelector('#task46 p');
-  
-    input.addEventListener('keypress', countriesList);
-  
-    function countriesList(event) {
-      if (event.which === 13) {
-        paragraph.innerHTML += input.value + ', ';
-      }
-    }
-  }
-  

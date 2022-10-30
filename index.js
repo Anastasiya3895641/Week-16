@@ -4,12 +4,14 @@
 
 let numbers = [];
 let sortNumbers = [];
-const btn = document.querySelector('.check');
+const button = document.getElementById('checkbtn');
 const errormessage = document.querySelector('.errormessage');
 const input = document.querySelector('.array');
-const result = document.querySelector('.result');
-const result2 = document.querySelector('.result2');
+const result = document.getElementById('result');
+const result2 = document.getElementById('result2');
 
+document.getElementById('result').innerHTML = 'Здесь будет отсортированный по возрастанию массив';
+document.getElementById('result2').innerHTML = 'Здесь будет сумма элементов массива';
 
 
 input.addEventListener('change', () => {
@@ -27,8 +29,46 @@ input.addEventListener('change', () => {
     }
 });
 
+
 function sumInput() {
-    console.log(numbers);
+
+    let sum = 0;
+
+
+    sortNumbers = numbers.sort((a, b) => {
+        return a - b;
+    });
+
+    for (let i = 0; i < sortNumbers.length; i++) {
+        sum += sortNumbers[i];
+    }
+    // console.log(sum);
+    return (sum);
+
+
+};
+
+document.getElementById('result').innerHTML = `Ваш отсортированный по возрастанию массив: ${sortNumbers}`;
+document.getElementById('result2').innerHTML = `Сумма элементов равна: ${sum}`;
+
+checkbtn.addEventListener('click', sumInput);
+
+
+
+
+
+
+
+
+
+/*function sumInput() {
+    for (let i = 0; i < numbers.length; i++) {
+        sortNumbers = sortNumbers + numbers[i] + ` `;
+    }
+
+}
+
+console.log(numbers);
 
 
     btn.addEventListener('click', resCheck);
@@ -44,24 +84,6 @@ function sumInput() {
         result.innerHTML = `Получилось ${sum}`;
 
     }
-}
-
-function sumInput() {
-}
-
-
-
-
-
-
-/*function sumInput() {
-    for (let i = 0; i < numbers.length; i++) {
-        sortNumbers = sortNumbers + numbers[i] + ` `;
-    }
-
-}
-
-
 
 
 
@@ -96,66 +118,12 @@ check.addEventListener('click', function () {
         numbers.sort(function (a, b) {
             return a - b;
         });
-        sumInput(numbers);
+} */
 
 
 
 
 
-
-    numbers = numbers.sort();
-    for (let i = 0; i < numbers.length; i++) {
-        sortNumbers = sortNumbers + numbers[i] + ` `;
-    }
-    document.getElementById('result2').innerHTML = `Массив отсортирован по возрастанию:  ` + sortNumbers;*/
-
-
-
-/*let numbers = [];
-let sum = 0
-for (let number of numbers) {
-    sum += number;
-}
-return sum
- 
- 
- 
- 
- 
- 
- 
- 
-/*check.addEventListener('click', () => {
- 
-    result.innerHTML = ``;
- 
-    for (let i = 0; i < array.length; i++) {
-        sum += array[i];
-        result.innerHTML = `Получилось ${sum}`;
-    }
- 
- 
-});
- 
- 
- 
- 
- 
- 
- 
- 
-array.sort();
- 
-let sum = 0;
- 
-for (let number of array) {
-    sum += number;
-}
-
-
-}
-sumInput()
-document.getElementById('result2').innerHTML = `Получилось ${sumInput()}`;*/
 
 
 
