@@ -13,7 +13,6 @@ form.onsubmit = (evt) => {
     let total;
     const status = auction.value;
     total = +status + Number(power.value);
-    console.log(total);
 
     for (let i = 0; i < services.length; i++) {
         if (services[i].checked) {
@@ -23,19 +22,23 @@ form.onsubmit = (evt) => {
 
     if (power.value != '') {
         if (external1.checked) {
-
+            external1.value = 1;
+            total = total + Number(external1.value);
+            console.log(total);
         }
         else {
             external1.value = 0;
         }
         if (external2.checked) {
-            external2.value = 3500;
+            external2.value = 5;
+            total = total + Number(external2.value);
         }
         else {
             external2.value = 0;
         }
         if (external3.checked) {
-            external3.value = 2000;
+            external3.value = 2;
+            total = total + Number(external3.value);
         }
         else {
             external3.value = 0;
