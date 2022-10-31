@@ -12,7 +12,7 @@
     <form class="form">
         <div>
             <p>Марка автомобиля</p>
-            <select>
+            <select class="auction">
                 <option value="500">Alfa Romeo</option>
                 <option value="600" selected="selected">BMW</option>
                 <option value="700">Ferrari</option>
@@ -24,27 +24,29 @@
 
         <div>
             <p>Тип услуги</p>
-            <input type="radio" name="services" value="400" /> Целый автомобиль<br />
-            <input type="radio" name="services" value="300" /> Распил<br />
-            <input type="radio" name="services" value="200" /> Конструктор<br />
+            <input type="radio" class="inputServices" name="services" value="400" /> Целый автомобиль<br />
+            <input type="radio" class="inputServices" name="services" value="300" /> Распил<br />
+            <input type="radio" class="inputServices" name="services" value="200" /> Конструктор<br />
         </div>
 
         <div>
             <label for="comment">Мощность л.с.</label><br />
-            <textarea type="number" name="power" id="comment" cols="10" rows="1">Введите цифры</textarea>
+            <textarea type="number" class="power" name="power" id="comment" cols="10" rows="1"></textarea>
         </div>
 
         <div>
-            <p>Возраст автомобиля</p>
-            <input type="checkbox" name="year" value="1" />
-            Меньше 3 лет<br />
-            <input type="checkbox" name="year" value="2" />
-            От 3 до 7 лет<br />
-            <input type="checkbox" name="year" value="3" />
-            Больше 7 лет<br />
+            <p>Дополнительные услуги</p>
+            <input type="checkbox" class="external1" name="year" value="1" />
+            Тех осмотр<br />
+            <input type="checkbox" class="external2" value="2" />
+            Мойка<br />
+            <input type="checkbox" class="external3" value="3" />
+            Покраска<br />
         </div>
 
-        <button type="submit" id="result">Рассчитать</button>
+        <button type="submit" id="checkbtn">Рассчитать</button>
+        <p class="result"></p>
     </form>
+    <script src="./auto.js"></script>
 </body>
 </html>
