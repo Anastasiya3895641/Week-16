@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week-16</title>
+</head>
+
+<body>
+    <h1>Калькулятор стоимости авто</h1>
+    <form class="form">
+        <div>
+            <p>Марка автомобиля</p>
+            <select>
+                <option value="500">Alfa Romeo</option>
+                <option value="600" selected="selected">BMW</option>
+                <option value="700">Ferrari</option>
+                <option value="800">Jaguar</option>
+                <option value="900">Lamborghini</option>
+                <option value="1000">Maserati</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Тип услуги</p>
+            <input type="radio" name="services" value="400" /> Целый автомобиль<br />
+            <input type="radio" name="services" value="300" /> Распил<br />
+            <input type="radio" name="services" value="200" /> Конструктор<br />
+        </div>
+
+        <div>
+            <label for="comment">Мощность л.с.</label><br />
+            <textarea type="number" name="power" id="comment" cols="10" rows="1">Введите цифры</textarea>
+        </div>
+
+        <div>
+            <p>Возраст автомобиля</p>
+            <input type="checkbox" name="year" value="1" />
+            Меньше 3 лет<br />
+            <input type="checkbox" name="year" value="2" />
+            От 3 до 7 лет<br />
+            <input type="checkbox" name="year" value="3" />
+            Больше 7 лет<br />
+        </div>
+
+        <button type="submit" id="result">Рассчитать</button>
+    </form>
+</body>
+</html>
