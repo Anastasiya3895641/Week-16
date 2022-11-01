@@ -45,8 +45,5 @@ form.onsubmit = (evt) => {
         }
     }
 
-
-
-
     result.innerHTML = total;
 };
