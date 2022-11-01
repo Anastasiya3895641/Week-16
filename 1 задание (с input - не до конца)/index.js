@@ -1,8 +1,9 @@
 
-
+let sum = 0;
 let numbers = [];
 let sortNumbers = [];
-const button = document.getElementById('checkbtn');
+const checkbtn = document.getElementById('checkbtn');
+const checkbtn2 = document.getElementById('checkbtn2');
 const errormessage = document.querySelector('.errormessage');
 const input = document.querySelector('.array');
 const result = document.getElementById('result');
@@ -30,9 +31,6 @@ input.addEventListener('change', () => {
 
 function sumInput() {
 
-    let sum = 0;
-
-
     sortNumbers = numbers.sort((a, b) => {
         return a - b;
     });
@@ -46,114 +44,15 @@ function sumInput() {
 
 };
 
-document.getElementById('result').innerHTML = `Ваш отсортированный по возрастанию массив: ${sortNumbers}`;
-document.getElementById('result2').innerHTML = `Сумма элементов равна: ${sum}`;
-
-checkbtn.addEventListener('click', sumInput);
-
-
-
-/*function sumInput() {
-    for (let i = 0; i < numbers.length; i++) {
-        sortNumbers = sortNumbers + numbers[i] + ` `;
-    }
-
+function showResult() {
+    document.getElementById('result').innerHTML = `Ваш отсортированный по возрастанию массив: ${sortNumbers}`;
+    document.getElementById('result2').innerHTML = `Сумма элементов равна: ${sum}`;
 }
 
-console.log(numbers);
+checkbtn2.addEventListener('click', sumInput);
+checkbtn.addEventListener('click', showResult);
 
 
-    btn.addEventListener('click', resCheck);
-
-    function resCheck() {
-        let sum = 0;
-
-        for (let i = 0; i < numbers.length; i++) {
-            sum += +input.value;
-        }
-
-
-        result.innerHTML = `Получилось ${sum}`;
-
-    }
-
-
-check.addEventListener('click', function () {
-    for (let i = 0; i < numbers.length; i++) {
-        sum += array[i];
-    }
-    return sum
-});
-
-
-*let numbers = [];
-let sum = 0
-for (let number of numbers) {
-    sum += number;
-}
-return sum
- 
-
-/*function sumInput() {
-
-
-
-    numbers.sort();
-    console.log(numbers);
-
-
-
-        numbers.sort(function (a, b) {
-            return a - b;
-        });
-} */
-
-/*check.addEventListener('click', () => {
- 
-    result.innerHTML = ``;
- 
-    for (let i = 0; i < array.length; i++) {
-        sum += array[i];
-        result.innerHTML = `Получилось ${sum}`;
-    }
- 
- 
-});
- 
- 
-}
-*/
-
-/*function sumInput() {
-    for (let i = 0; i < numbers.length; i++) {
-        sortNumbers = sortNumbers + numbers[i] + ` `;
-    }
- 
-}
- 
- btn.addEventListener('click', resCheck);
- 
-    function resCheck() {
- 
- 
-        for (let i = 0; i < numbers.length; i++) {
-            sum += +input.value;
-        }
- 
- 
-        result.innerHTML = `Получилось ${sum}`;
- 
-    }
-}
- 
-check.addEventListener('click', function () {
-    for (let i = 0; i < numbers.length; i++) {
-        sum += array[i];
-    }
-    return sum
-});
- 
-*/
 
 
 
